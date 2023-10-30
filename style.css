@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;700&display=swap');
+
+/*
+#70BFFF - azul claro
+#2196f3 - azul mais escuro  
+#40396E - roxo
+#fff - branco
+#F5F5F5 - branco2 */
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Darker Grotesque', sans-serif;
+  background-color: #F5F5F5;
+  color:#000;
+  text-align: center;
+}
+
+.logo {
+  width: 22rem;
+}
+
+.chars .filters .filter {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+}
+
+.chars-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  border: solid .05rem #40396E;
+  box-shadow: 5px 3px 0px #40396E;
+  margin: .6rem;
+  height: 22rem;
+  width: 15rem;
+  background-color:#70BFFF ;
+  border-radius: .5rem;
+}
+
+.card:hover {
+  transform: translate(5px, 3px);
+  box-shadow: 0px 0px;
+  cursor: pointer;
+}
+
+.card-img {
+  max-width: 100%;
+  border-radius: .4rem .4rem 0rem 0rem;
+}
+
+.card-species,.card-status {
+  padding: .8rem;
+}
+
+.card-name {
+  color: #fff;
+  background-color:#40396E;
+}
+
+.card-info {
+  margin: .2rem;
+  display: flex;
+  justify-content: start;
+  line-height: 0rem;
+  border-radius: 1rem 1rem;
+  font-size: 1.2rem;
+}
+
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: .1rem solid;
+  border-radius: .7rem;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 8px 6px 0px #40396E;
+}
+
+button:hover {
+  transform: translate(5px, 10px);
+  box-shadow: 0px 0px;
+  cursor: pointer
+}
