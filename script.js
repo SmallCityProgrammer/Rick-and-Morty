@@ -21,6 +21,7 @@ async function getCharacters({name, species, gender, status, page = 1}) {
 
   const characters = await response.json()
   return characters.results
+  
 }
 
 //Função assíncrona que usa getCharacters e passa o objeto defaultFilters como parametro
@@ -120,7 +121,7 @@ function addListeners() {
   })
 
   searchInput.addEventListener("keyup", async (event) => {
-    defaultFilters.name = searchInput.value.trim();
+    defaultFilters.name = searchInput.value;
     defaultFilters.page = 1; //Reseta a pagina da API pra 1
   
     //Realiza a filtragem por nome
