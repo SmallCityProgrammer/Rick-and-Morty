@@ -1,19 +1,19 @@
 const charsContainer = document.querySelector('.chars-container');
-const searchInput = document.querySelector("#search")
+const searchInput = document.querySelector("#search");
 const speciesFilters = document.querySelector('#species');
 const genderFilters = document.querySelector('#gender');
 const statusFilters = document.querySelector('#status');
-const loadMoreButton = document.querySelector('#load-more')
+const loadMoreButton = document.querySelector('#load-more');
 
 
-const API = 'https://rickandmortyapi.com/api/'
+const API = 'https://rickandmortyapi.com/api/';
 const defaultFilters = {
   name: '',
   species: '',
   gender: '',
   status: '',
   page: 1
-}
+};
 
 //Função que reúne todas as informações que serão passadas na API
 async function getCharacters({name, species, gender, status, page = 1}) {
@@ -21,7 +21,6 @@ async function getCharacters({name, species, gender, status, page = 1}) {
 
   const characters = await response.json()
   return characters.results
-  
 }
 
 //Função assíncrona que usa getCharacters e passa o objeto defaultFilters como parametro
@@ -32,7 +31,7 @@ async function main() {
 }
 
 //Starta o projeto
-main()
+main();
 
 //Renderizei todos characters com um forEach criando dinamicamente toda a estrutura dos cards
 function render({ characters }) {
@@ -45,11 +44,11 @@ function render({ characters }) {
     const status = document.createElement('p');
 
     //adicionei as classes pra estilizar no CSS
-    div.classList = 'card'
-    image.classList = 'card-img'
-    name.classList = 'card-name'
-    species.classList = 'card-species card-info'
-    status.classList = 'card-status card-info'
+    div.classList = 'card';
+    image.classList = 'card-img';
+    name.classList = 'card-name';
+    species.classList = 'card-species card-info';
+    status.classList = 'card-status card-info';
     
 
     //adicionei os dados do objeto character aos elementos criados
@@ -59,8 +58,8 @@ function render({ characters }) {
     status.innerText = character.status;
     
     //linkei os elementos ao elemento div, e o elemento div a classe charsContainer do Index.html
-    div.append(image, name, species, status)
-    charsContainer.appendChild(div)
+    div.append(image, name, species, status);
+    charsContainer.appendChild(div);
     
     //essa função salva os dados do personagem clickado como selectedCharacter, que eu armazeno como dado pro localStorage e transfiro o usuário pra pagina charPage onde eu consumo esses dados
     div.addEventListener("click", () => {
@@ -90,10 +89,10 @@ async function handleFilterChange(type, event) {
 //Botão de carregar mais
 function handleLoadMore(){
   loadMoreButton.addEventListener("click", async () => {
-    defaultFilters.page += 1
+    defaultFilters.page += 1;
 
-    const characters = await getCharacters(defaultFilters)
-    render({characters})
+    const characters = await getCharacters(defaultFilters);
+    render({characters});
   })
 }
 
@@ -129,4 +128,4 @@ function addListeners() {
   })
 
   loadMoreButton.addEventListener("click",handleLoadMore)
-}
+};

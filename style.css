@@ -68,8 +68,10 @@ body {
 }
 
 .card-name {
+  position: relative;
   color: #fff;
   background-color:#40396E;
+  top:-.5rem;
 }
 
 .card-info {
@@ -92,11 +94,11 @@ button {
   font-size: 16px;
   cursor: pointer;
   text-transform: uppercase;
-  box-shadow: 8px 6px 0px #40396E;
+  box-shadow: -8px 6px 0px #40396E;
 }
 
 button:hover {
-  transform: translate(5px, 10px);
+  transform: translate(-5px, 8px);
   box-shadow: 0px 0px;
   cursor: pointer
 }
